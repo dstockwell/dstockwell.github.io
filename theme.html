@@ -1,0 +1,27 @@
+<meta id="theme" name="theme-color"></meta>
+<style>
+#target {
+  visibility: hidden;
+}
+</style>
+<div id="target"></div>
+<script>
+target.animate([
+  {color: '#2196F3'},
+  {color: '#4CAF50'},
+  {color: '#FF5722'},
+  {color: '#F44336'},
+  {color: '#E040FB'},
+  {color: '#2196F3'},
+], {
+  duration: 1000,
+  iterations: Infinity
+});
+
+function loop() {
+  theme.content = getComputedStyle(target).color;
+  requestAnimationFrame(loop);
+}
+    
+loop();
+</script>
